@@ -1,0 +1,14 @@
+- company: "Lorep Ipsum"
+  url: "https://www.grantthornton.cn/about-us/"
+  logo: "/images/turtle.png"
+  roles:
+    - "Lorep ipsum."
+    - "Lorep ipsum."
+  years: "2022 - 当前"
+
+- company: "Lorep Ipsum"
+  url: "https://www.grantthornton.cn/about-us/"
+  logo: "/images/turtle.png"
+  description: >
+    We are PhD students in Economics, some of us are “rare voices”, others are not. We believe the profession could do better in terms of individual experience and productivity...
+  years: "2022 - 当前"

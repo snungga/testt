@@ -1,0 +1,12 @@
+{{ $icon := resources.Get (printf "icons/%s.svg" ($.Get 0)) }}
+{{ $link := $.Get 1 }}
+
+{{ if $icon }}
+  <a href="{{ $link }}" class="inline-block" target="_blank" rel="noopener noreferrer">
+    <span class="w-12 h-12 block" style="width:24px; height:24px;">
+      {{ $icon.Content | safeHTML }}
+    </span>
+  </a>
+{{ else }}
+  {{ errorf `[BLOWFISH] Shortcode "icon" error in "%s": Resource "%s" not found. Check the path is correct or remove the shortcode.` .Page.Path (printf "icons/%s.svg" ($.Get 0)) }}
+{{ end }}

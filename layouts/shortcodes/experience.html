@@ -1,0 +1,44 @@
+<!-- layouts/shortcodes/experience.html -->
+<div class="w-full px-6 py-8 bg-gradient-to-br from-[#1e2a38] to-[#233b4d] text-white font-serif space-y-10">
+
+  <!-- Table Header (visible on md+) -->
+  <div class="hidden md:grid grid-cols-12 gap-4 text-white font-bold pb-2 border-b border-white/20">
+    <div class="col-span-2">Company</div>
+    <div class="col-span-8 text-center">Roles</div>
+    <div class="col-span-2 text-right">Years</div>
+  </div>
+
+  {{ range site.Data.experience }}
+  <div class="grid grid-cols-12 gap-4 items-start border-b border-white/10 pb-6">
+
+    <!-- Logo -->
+    <div class="col-span-12 md:col-span-2 flex justify-start md:justify-center">
+      <img src="{{ .logo }}" alt="logo" class="w-20 h-20 object-cover rounded-lg" />
+    </div>
+
+    <!-- Company + Role Text -->
+    <div class="col-span-12 md:col-span-8 space-y-2">
+      <a href="{{ .url }}" target="_blank" class="text-sky-400 font-bold text-lg hover:underline">
+        {{ .company }}
+      </a>
+      {{ if .description }}
+        <p class="text-sm md:text-base text-justify leading-relaxed">
+          {{ .description }}
+        </p>
+      {{ else }}
+        <ul class="list-disc list-inside text-sm md:text-base space-y-1">
+          {{ range .roles }}
+            <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+      {{ end }}
+    </div>
+
+    <!-- Years -->
+    <div class="col-span-12 md:col-span-2 text-right font-semibold text-sm md:text-base mt-4 md:mt-0">
+      {{ .years }}
+    </div>
+  </div>
+  {{ end }}
+
+</div>

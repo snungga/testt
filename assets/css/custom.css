@@ -1,0 +1,9 @@
+@font-face {
+    font-family: font;
+    src: url('static/fonts/MouldyCheeseRegular-WyMWG.ttf');
+}
+
+html {
+    font-family: font;
+    font-size : 15 ;
+}
