@@ -1,0 +1,25 @@
+<div class="relative inline-block text-left">
+  <button
+    class="!rounded-md bg-primary-600 px-4 py-2 !text-neutral !no-underline hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700 inline-flex items-center"
+    type="button"
+    id="dropdownButton-{{ .Get "id" }}"
+    aria-expanded="false"
+    aria-haspopup="true"
+    onclick="document.getElementById('dropdownMenu-{{ .Get `id` }}').classList.toggle('hidden')"
+  >
+    {{ .Inner }}
+    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+
+  <div
+    id="dropdownMenu-{{ .Get `id` }}"
+    class="hidden absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg dark:bg-gray-800"
+    role="menu"
+    aria-orientation="vertical"
+    aria-labelledby="dropdownButton-{{ .Get `id` }}"
+  >
+    {{ .InnerDeindent | markdownify }}
+  </div>
+</div>
