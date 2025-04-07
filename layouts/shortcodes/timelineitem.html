@@ -2,58 +2,33 @@
 {{ $header := .Get "header" }}
 {{ $badge := .Get "badge" }}
 {{ $subheader := .Get "subheader" }}
-{{ $location := .Get "location" }}
-{{ $title := .Get "title" }}
-
-<li class="flex justify-center w-full">
-  <div class="flex flex-grow ml-10 max-w-4xl:">
-    <div class="bg-primary-500 dark:bg-primary-300 text-neutral-50 dark:text-neutral-700 min-w-[30px] h-8 text-2xl flex items-center justify-center rounded-full -ml-12 mt-10">
+{{ $text := .Get "text" }}
+<li>
+  <div class="flex flex-start">
+    <div class="bg-primary-500 dark:bg-primary-300 text-neutral-50 dark:text-neutral-700 min-w-[30px] h-8 text-2xl flex items-center justify-center rounded-full -ml-12 mt-5">
       {{ partial "icon" $icon }}
     </div>
-    <div class="block size-10s p-6 rounded-lg shadow-2xl min-w-full ml-6 mb-10 break-words">
-      
-      <!-- Header and Badge -->
-      <div class="flex justify-between items-start">
+    <div class="block p-6 rounded-lg shadow-2xl min-w-full ml-6 mb-10 break-words">
+      <div class="flex justify-between">
         {{ if $header }}
-        <h2 class="text-balance font-l mt-0">
+        <h2 class="mt-0">
           {{ $header }} 
         </h2>
         {{ end }}
         {{ if $badge }}
-        <h3 class="text-balance ml-4 mt-2">
-          {{ partial "badge" $badge }}
+        <h3 class="">
+          {{ partial "badge"  $badge}}
         </h3>
         {{ end }}
       </div>
-
-      <!-- Subheader and Location -->
-      {{ if or $subheader $location }}
-      <div class="flex justify-between items-start mt-11 mb-4 ml-1">
-        {{ if $subheader }}
-        <h4 class="text-lg font-medium">
-          {{ $subheader }}
-        </h4>
-        {{ end }}
-        {{ if $location }}
-        <span class="inline-block bg-blue-100 text-blue-800 text-balance font-medium px-3 py-1 rounded-full ml-14, mt-6">
-          {{ $location }}
-        </span>
-        {{ end }}
+      {{ if $subheader }}
+      <h4 class="mt-0">
+        {{ $subheader }}
+      </h4>
+      {{ end }}
+      <div class="mb-6">
+        {{- .Inner -}}
       </div>
-      {{ end }}
-
-      <!-- Collapsible content -->
-      {{ if $title }}
-      <details class="group rounded-bl-3xl overflow-hidden mt-4">
-        <summary class="bg-blue-800 text-white px-4 py-2 font-semibold cursor-pointer group-open:rounded-b-full">
-          {{ $title }}
-        </summary>
-        <div class="bg-blue-100 px-6 py-4 text-balance text-blue-800">
-          {{ .Inner | markdownify }}
-        </div>
-      </details>
-      {{ end }}
-
     </div>
   </div>
 </li>

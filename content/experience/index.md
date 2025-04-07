@@ -10,7 +10,7 @@ showReadingTime = false
 {{< timeline >}}
 
 
-{{< timelineitem
+{{< item
   icon="business"
   header="University of Geneva "
   badge="Sept. 2024 ‑ Present"
@@ -31,9 +31,9 @@ showReadingTime = false
 
 [Visit Website](https://example.com)
 
-{{< /timelineitem >}}
+{{< /item >}}
 
-{{< timelineitem
+{{< item
   icon="business"
   header="University of Geneva "
   badge="Sept. 2024 ‑ Feb 2025"
@@ -50,9 +50,9 @@ showReadingTime = false
 
 [Visit Website](https://example.com)
 
-{{< /timelineitem >}}
+{{< /item >}}
 
-{{< timelineitem
+{{< item
   icon="business"
   header="University of Geneva "
   badge="Sept. 2024 ‑ Present"
@@ -73,7 +73,7 @@ showReadingTime = false
 
 [Visit Website](https://example.com)
 
-{{< /timelineitem >}}
+{{< /item >}}
 {{< /timeline >}}
 
 
